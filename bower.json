@@ -19,5 +19,8 @@
     "bootstrap": "^3.3.6",
     "animate.css": "^3.5.2",
     "font-awesome": "fontawesome#^4.6.3"
+  },
+  "devDependencies": {
+    "jquery": "2.2.4"
   }
 }

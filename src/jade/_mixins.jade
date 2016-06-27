@@ -37,6 +37,7 @@ mixin nav_divider
 mixin nav_header
     li.dropdown-header
         block
+
 //- End navbar mixins
 
 //- Button mixin
@@ -53,6 +54,7 @@ mixin button(style, href, size)
  
     a( class=["btn", "btn-" + style, size], href=href )
         block
+
 //- End button mixins
 
 //- Panel mixin
@@ -62,6 +64,7 @@ mixin panel(heading, style)
         .panel-heading= heading
         .panel-body
             block
+
 //- End Panel mixins
 
 //- Alert mixin
@@ -69,6 +72,7 @@ mixin alert(style)
     div( class=["alert", "alert-dismissable", "alert-" + style] )
         button.close( type="button", data-dismiss="alert" ) ×
         block
+
 //- End Alert mixins
 
 //- List group mixins
@@ -103,4 +107,5 @@ mixin listHeading
 mixin listText
     .list-group-item-text
         block
+
 //- End List group mixins

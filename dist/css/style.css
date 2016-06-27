@@ -1,1 +1,2 @@
-body{background:#fff;color:#ffa500}
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700|Playfair+Display");
+body{font-family:"Montserrat";background:#fff;color:#ffa500;}body .nav ul li{color:#3f60c3}body .footer .col-md-6{font-family:"Playfair Display";color:#26d75d}

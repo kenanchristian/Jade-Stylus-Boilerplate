@@ -2,7 +2,7 @@ doctype html
 html(lang="en")
   head
     meta(charset="utf-8")
-    title HELLO WORLD
+    block title
     
     //- VENDOR CSS
     link(rel="stylesheet", href="./vendor/css/animate.min.css")
@@ -11,7 +11,8 @@ html(lang="en")
     link(rel="stylesheet", href="./vendor/css/font-awesome.min.css")
     
     //- CUSTOM CSS
-    link(rel="stylesheet", href="./dist/css/style.css")
+    block style
+    link(rel="stylesheet", href="./css/style.css")
         
   body
     block content
@@ -21,7 +22,5 @@ html(lang="en")
     script(src="./vendor/js/bootstrap.min.js")
     
     //- CUSTOM JS
-    script(src="./dist/js/main.js")
-      
-
-  
+    block script
+    script(src="./js/main.js")
