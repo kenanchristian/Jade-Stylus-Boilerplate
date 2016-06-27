@@ -94,9 +94,14 @@ gulp.task('connect', function() {
 
 gulp.task('watch', function() {
 
+  gulp.watch('./src/jade/**/*.jade', ['templates']);
   gulp.watch('./src/jade/*.jade', ['templates']);
+
   gulp.watch('./src/styl/*.styl', ['styleCompress']);
+  gulp.watch('./src/styl/**/*.styl', ['styleCompress']);
+
   gulp.watch('./src/js/*.js', ['scriptMinify']);
+
   gulp.watch('./src/images/**', ['imageCompress']);
 
 });

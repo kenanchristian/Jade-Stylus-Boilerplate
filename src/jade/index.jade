@@ -1,8 +1,16 @@
 extend _layout
+include _mixins
+
+block title 
+  title Page Title
+  
+block style
+  +bootswatch("flatly")
 
 block content
   include ./partials/_nav
-  
-  h1 Hello World :)
-  
-  include ./partials/_footer
+  .container-fluid
+    
+    h1 Hello World :D  
+    
+    include ./partials/_footer
