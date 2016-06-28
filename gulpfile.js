@@ -6,11 +6,14 @@ var uglify = require('gulp-uglify');
 var connect = require('gulp-connect');
 var imagemin = require('gulp-imagemin');
 
+
 //HTML
 gulp.task('templates', function() {
   return gulp.src(['./src/jade/*.jade','!./src/jade/_*.jade'])
     .pipe(plumber())
-    .pipe(jade())
+    .pipe(jade({
+      pretty: true
+    }))
     .pipe(gulp.dest('./dist/'))
     .pipe(connect.reload());
 });
@@ -88,6 +91,7 @@ gulp.task('copyLibs',['copyAnimateCSS','copyBootstrapCSS','copyBootstrapJS','cop
 // CONNECT - LIVERELOAD
 gulp.task('connect', function() {
   connect.server({
+    root: 'dist',
     livereload: true
   });
 });
