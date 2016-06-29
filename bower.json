@@ -1,11 +1,11 @@
 {
-  "name": "kumalamotor",
+  "name": "jade-stylus-boilerplate",
   "description": "",
-  "main": "index.js",
+  "main": "",
   "authors": [
     "Kenan Christian <christian.dimas.94@gmail.com>"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "homepage": "",
   "ignore": [
     "**/.*",
