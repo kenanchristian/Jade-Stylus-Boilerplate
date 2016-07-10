@@ -106,7 +106,7 @@ gulp.task('watch', function() {
 
   gulp.watch('./src/js/*.js', ['scriptMinify']);
 
-  gulp.watch('./src/images/**', ['imageCompress']);
+  gulp.watch('./src/images/**', ['compressImage']);
 
 });
 
