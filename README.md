@@ -37,7 +37,6 @@ Then open ``localhost:8080`` on the browser with [LiveReload Extension](http://l
 ### Using for development
 Please save all your source code at the ``src/`` directory, and all of it will be processed and copied to the ``dist/`` folder
 
->>>>>>> 663936abc71fa79d2de9bb0415f5f911352caa1b
 
 ## Built With
 
