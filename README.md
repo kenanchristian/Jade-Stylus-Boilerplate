@@ -1,13 +1,12 @@
 #Jade Stylus Boilerplate
 
-Boilerplate for web project using [Jade](http://jade-lang.com/), [Stylus](http://stylus-lang.com/) and [Gulp](http://gulpjs.com/) with LiveReload.
+Boilerplate for web project using [Jade](http://jade-lang.com/), [Stylus](http://stylus-lang.com/) and [Gulp](http://gulpjs.com/).
 
 ## Getting Started
 
 ### Prerequisities
 
  - [Node.JS](http://nodejs.org)
- - [LiveReload Extension](http://livereload.com/)
 
 ### Installing
 Please install [GulpJs](http://gulpjs.com) globaly if you want to use it for another project, to install it run this code on you terminal
@@ -25,15 +24,12 @@ After the npm finished, run this code.
 bower install
 ```
 
-
 ## Hello World
 
 To get this running just open terminal and type
 ```
 gulp
 ```
-Then open ``localhost:8080`` on the browser with [LiveReload Extension](http://livereload.com/) installed.
-
 
 ## Built With
 

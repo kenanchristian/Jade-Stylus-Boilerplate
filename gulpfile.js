@@ -3,9 +3,8 @@ var stylus = require('gulp-stylus');
 var plumber = require('gulp-plumber');
 var jade = require('gulp-jade');
 var uglify = require('gulp-uglify');
-var connect = require('gulp-connect');
 var imagemin = require('gulp-imagemin');
-
+var browserSync = require('browser-sync').create();
 
 //HTML
 gulp.task('templates', function() {
@@ -15,8 +14,9 @@ gulp.task('templates', function() {
       pretty: true
     }))
     .pipe(gulp.dest('./dist/'))
-    .pipe(connect.reload());
 });
+
+gulp.task('template-watch',['templates'], browserSync.reload);
 
 //STYLE-MINIFY
 gulp.task('styleCompress', function () {
@@ -26,7 +26,7 @@ gulp.task('styleCompress', function () {
       compress: true
     }))
     .pipe(gulp.dest('./dist/css/'))
-    .pipe(connect.reload());
+    .pipe(browserSync.stream());
 });
 
 //SCRIPTS-MINIFY
@@ -35,8 +35,9 @@ gulp.task('scriptMinify', function () {
     .pipe(plumber())
     .pipe(uglify())
     .pipe(gulp.dest('./dist/js/'))
-    .pipe(connect.reload());
 });
+
+gulp.task('script-watch',['scriptMinify'], browserSync.reload);
 
 //COMPRESS IMAGE
 gulp.task('compressImage',function(){
@@ -88,26 +89,26 @@ gulp.task('copyJqueryJS', function() {
 
 gulp.task('copyLibs',['copyAnimateCSS','copyBootstrapCSS','copyBootstrapJS','copyBootstrapFont','copyFontawesomeCSS','copyFontawesomeFont','copyJqueryJS']);
 
-// CONNECT - LIVERELOAD
-gulp.task('connect', function() {
-  connect.server({
-    root: 'dist',
-    livereload: true
-  });
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: "./dist/"
+        }
+    });
 });
 
 gulp.task('watch', function() {
 
-  gulp.watch('./src/jade/**/*.jade', ['templates']);
-  gulp.watch('./src/jade/*.jade', ['templates']);
+  gulp.watch('./src/jade/**/*.jade', ['template-watch']);
+  gulp.watch('./src/jade/*.jade', ['template-watch']);
 
   gulp.watch('./src/styl/*.styl', ['styleCompress']);
   gulp.watch('./src/styl/**/*.styl', ['styleCompress']);
 
-  gulp.watch('./src/js/*.js', ['scriptMinify']);
+  gulp.watch('./src/js/*.js', ['script-watch']);
 
   gulp.watch('./src/images/**', ['imageCompress']);
 
 });
 
-gulp.task('default',['copyLibs','templates','styleCompress','scriptMinify','compressImage','connect','watch']);
+gulp.task('default',['copyLibs','templates','styleCompress','scriptMinify','compressImage','browser-sync','watch']);
