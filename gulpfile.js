@@ -98,17 +98,10 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('watch', function() {
-
-  gulp.watch('./src/jade/**/*.jade', ['template-watch']);
-  gulp.watch('./src/jade/*.jade', ['template-watch']);
-
-  gulp.watch('./src/styl/*.styl', ['styleCompress']);
-  gulp.watch('./src/styl/**/*.styl', ['styleCompress']);
-
-  gulp.watch('./src/js/*.js', ['script-watch']);
-
-  gulp.watch('./src/images/**', ['compressImage']);
-
+  gulp.watch([ 'src/jade/**/*.jade', 'src/jade/*.jade' ], ['template-watch']);
+  gulp.watch(['src/styl/*.styl', './src/styl/**/*.styl'], ['styleCompress']);
+  gulp.watch('src/js/*.js', ['script-watch']);
+  gulp.watch('src/images/**', ['compressImage']);
 });
 
 gulp.task('default',['copyLibs','templates','styleCompress','scriptMinify','compressImage','browser-sync','watch']);
