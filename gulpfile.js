@@ -16,7 +16,10 @@ gulp.task('templates', function() {
     .pipe(gulp.dest('./dist/'))
 });
 
-gulp.task('template-watch',['templates'], browserSync.reload);
+gulp.task('template-watch',['templates'], function(){
+  browserSync.reload();
+  return;
+});
 
 //STYLE-MINIFY
 gulp.task('styleCompress', function () {
